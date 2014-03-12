@@ -14,6 +14,8 @@ public class Habitacion
     //DECARACIÓN DE VARIABLES GLOBALES
     
     private static Integer HABITACIONES=20;
+    private static Integer HABITACIONESOCUPADAS=5;//variable que se irá cambiando según clientes en el hotel
+
 
     //DECLARACIÓN VARIABLES
     
@@ -94,7 +96,13 @@ public class Habitacion
         HABITACIONES = aHABITACIONES;
     }
 
-    
+    /**
+     * @param aHABITACIONESOCUPADAS the HABITACIONESOCUPADAS to set
+     */
+    public static void setHABITACIONESOCUPADAS(Integer aHABITACIONESOCUPADAS)
+    {
+        HABITACIONESOCUPADAS = aHABITACIONESOCUPADAS;
+    }
     
     
     
@@ -156,6 +164,14 @@ public class Habitacion
         return HABITACIONES;
     }
     
+    /**
+     * @return the HABITACIONESOCUPADAS
+     */
+    public static Integer getHABITACIONESOCUPADAS()
+    {
+        return HABITACIONESOCUPADAS;
+    }
+    
   
     //ZONA FUNCIONES
     
@@ -163,12 +179,13 @@ public class Habitacion
     
   /**
    * Método que devuelve el número de habitaciones que tiene el hotel
+   * disponibles 
    * 
    * @return número habitaciones
    */
     public Integer verNumeroHabitaciones()
     {
-        return getHABITACIONES();
+        return (getHABITACIONES()-getHABITACIONESOCUPADAS());
     }
     
     /**
@@ -180,5 +197,16 @@ public class Habitacion
     {
         return this.getTipoHabitacion();
     }
+    
+    /**
+     *Aumentamos el número de habitaciones alquiladas 
+     * 
+     * @param numeroHabitacionesRestar número de habitaciones en las que alojamos los clientes
+     */
+    public void habitacionesDespachadas(Integer numeroHabitacionesRestar)
+    {
+        setHABITACIONESOCUPADAS(getHABITACIONESOCUPADAS()+numeroHabitacionesRestar);
+    }
+    
     
 }
