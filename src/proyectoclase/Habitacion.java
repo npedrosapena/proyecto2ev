@@ -176,7 +176,7 @@ public class Habitacion
      * 
      * @return tipo de habitación
      */
-    public String verTipoHabitaciones()
+    public String verTipoHabitacion()
     {
         return this.getTipoHabitacion();
     }
