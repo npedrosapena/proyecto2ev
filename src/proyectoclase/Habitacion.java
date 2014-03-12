@@ -199,13 +199,21 @@ public class Habitacion
     }
     
     /**
-     *Aumentamos el número de habitaciones alquiladas 
+     *Aumentamos/disminuimos el número de habitaciones alquiladas.
+     *Para controlas eso le pasamos en modo una 'S'(sumar), cualquier otro caracter
+     *se tomará como resta.
      * 
      * @param numeroHabitacionesRestar número de habitaciones en las que alojamos los clientes
      */
-    public void habitacionesDespachadas(Integer numeroHabitacionesRestar)
+    public void habitacionesDespachadas(Integer numeroHabitacionesRestar, char modo)
     {
-        setHABITACIONESOCUPADAS(getHABITACIONESOCUPADAS()+numeroHabitacionesRestar);
+        if(modo=='S')
+        {
+            setHABITACIONESOCUPADAS(getHABITACIONESOCUPADAS()+numeroHabitacionesRestar);
+        }else
+        {
+            setHABITACIONESOCUPADAS(getHABITACIONESOCUPADAS()-numeroHabitacionesRestar);
+        }
     }
     
     
