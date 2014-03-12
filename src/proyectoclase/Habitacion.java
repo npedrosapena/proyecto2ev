@@ -11,6 +11,10 @@ package proyectoclase;
 
 public class Habitacion
 {
+    //DECARACIÓN DE VARIABLES GLOBALES
+    
+    private static Integer HABITACIONES=20;
+
     //DECLARACIÓN VARIABLES
     
     private Boolean ocupado,mascotas;
@@ -82,6 +86,17 @@ public class Habitacion
         this.precio = precio;
     }
     
+     /**
+     * @param aHABITACIONES the HABITACIONES to set
+     */
+    public static void setHABITACIONES(Integer aHABITACIONES)
+    {
+        HABITACIONES = aHABITACIONES;
+    }
+
+    
+    
+    
     
     //ZONA GETS
 
@@ -133,5 +148,37 @@ public class Habitacion
         return precio;
     }
     
+    /**
+     * @return the HABITACIONES
+     */
+    public static Integer getHABITACIONES()
+    {
+        return HABITACIONES;
+    }
+    
+  
+    //ZONA FUNCIONES
+    
+    
+    
+  /**
+   * Método que devuelve el número de habitaciones que tiene el hotel
+   * 
+   * @return número habitaciones
+   */
+    public Integer verNumeroHabitaciones()
+    {
+        return getHABITACIONES();
+    }
+    
+    /**
+     * Método que devuelve el tipo de habitación
+     * 
+     * @return tipo de habitación
+     */
+    public String verTipoHabitaciones()
+    {
+        return this.getTipoHabitacion();
+    }
     
 }
