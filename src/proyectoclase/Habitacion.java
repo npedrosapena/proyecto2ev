@@ -4,6 +4,8 @@ clase Habitacion
 
 package proyectoclase;
 
+import javax.swing.JOptionPane;
+
 /**
  *
  * @author nelson
@@ -15,7 +17,6 @@ public class Habitacion
     
     private static Integer HABITACIONES=20;
     private static Integer HABITACIONESOCUPADAS=5;//variable que se irá cambiando según clientes en el hotel
-
 
     //DECLARACIÓN VARIABLES
     
@@ -204,6 +205,7 @@ public class Habitacion
      *se tomará como resta.
      * 
      * @param numeroHabitacionesRestar número de habitaciones en las que alojamos los clientes
+     * @param modo indica el modo sumar/restar
      */
     public void habitacionesDespachadas(Integer numeroHabitacionesRestar, char modo)
     {
@@ -215,6 +217,51 @@ public class Habitacion
             setHABITACIONESOCUPADAS(getHABITACIONESOCUPADAS()-numeroHabitacionesRestar);
         }
     }
+    
+    /**
+     * Se introducen los datos de la habitación
+     */
+    public void datosHabitacion()
+    {
+        Integer opcion=0;
+        
+        //declaración mensaje botones personalizados
+        String simple = "Simple"; //Aqui puede ir cualquier nombre
+        String doble = "Doble";
+        String suite ="Suite";
+        Object options[] ={simple,doble,suite};
+        
+        this.setCodigoHabitacion(JOptionPane.showInputDialog(null,"Introduzca código de habitación: ","Datos habitación",JOptionPane.INFORMATION_MESSAGE));
+        
+        opcion=JOptionPane.showConfirmDialog(null, "animales?","Datos",JOptionPane.YES_NO_OPTION);
+            
+        if(opcion<1)
+            {
+                this.setMascotas(true);
+            }else
+            {
+                this.setMascotas(false);
+            }
+        
+        this.setNumeroHabitacion(Integer.parseInt(JOptionPane.showInputDialog(null,"Numero de habitación","Datos habitación",JOptionPane.INFORMATION_MESSAGE)));
+        
+        switch(JOptionPane.showOptionDialog(null, " Tipo de habitación", "Datos habitación", JOptionPane.YES_NO_CANCEL_OPTION, JOptionPane.QUESTION_MESSAGE, null, options, simple))
+        {
+            case 0:this.setTipoHabitacion("simple");
+                break;
+            case 1: this.setTipoHabitacion("doble");
+                break;
+            case 2: this.setTipoHabitacion("suit");
+                break;
+        }
+        
+        this.setPrecio(Float.parseFloat(JOptionPane.showInputDialog(null,"precio","Datos habitación",JOptionPane.INFORMATION_MESSAGE)));
+        
+        //sumamos una habitación ocupada
+        this.habitacionesDespachadas(1, 'S');
+    }
+    
+    
     
     
 }
