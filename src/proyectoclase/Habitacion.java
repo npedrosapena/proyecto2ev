@@ -11,7 +11,7 @@ import javax.swing.JOptionPane;
  * @author nelson
  */
 
-public class Habitacion
+public class Habitacion implements iHabitaciones
 {
     //DECARACIÓN DE VARIABLES GLOBALES
     
@@ -261,7 +261,50 @@ public class Habitacion
         this.habitacionesDespachadas(1, 'S');
     }
     
+    @Override
+    public Float calcularPrecio()
+    {
+        float precio=this.getPrecioHabitacion();
+        float mascota=0f;
+        float suplemento=0f;
+        float temporada=this.calcularTemporada(false);
+        
+        if(this.getMascotas())
+        {
+            mascota=this.getPrecioMascota();
+        }
+        
+        
+        return (precio+mascota+suplemento+temporada);
+    }
     
+    @Override
+    public Float getPrecioMascota()
+    {
+        return PRECIOMASCOTA;
+    }
+    
+    @Override
+    public Float getPrecioHabitacion()
+    {
+        return PRECIOHABITACION;
+    }
+    
+    /**Dado true si es temporada alta, devolvemos el precio de la temporada
+     * si es false, devolvemos el precio de la temporada baja
+     * 
+     * @param alta
+     * @return 
+     */
+    public Float calcularTemporada (Boolean alta)
+    {
+        if (alta)
+        {
+            return 10f;
+        }
+        
+        return 0f;
+    }
     
     
 }
