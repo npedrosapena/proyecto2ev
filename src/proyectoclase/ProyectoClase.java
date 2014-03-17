@@ -29,6 +29,9 @@ public class ProyectoClase
         System.out.println(cli.recogerFecha());
         cli.tomaDatos();
         
+
+        Menu menu = new Menu();
+        menu.menu();
     }
     
 }
