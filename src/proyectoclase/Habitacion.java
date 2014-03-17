@@ -14,8 +14,11 @@ import javax.swing.JOptionPane;
 public class Habitacion implements iHabitaciones
 {
     //DECARACIÓN DE VARIABLES GLOBALES
+    private static Integer HABITACIONSIMPLE=2;
+    private static Integer HABITACIONDOBLE=2;
+    private static Integer HABITACIONSUITE=2;
     
-    private static Integer HABITACIONES=20;
+    private static Integer HABITACIONES;
     private static Integer HABITACIONESOCUPADAS=5;//variable que se irá cambiando según clientes en el hotel
 
     //DECLARACIÓN VARIABLES
@@ -41,6 +44,29 @@ public class Habitacion implements iHabitaciones
  
     //ZONA SETS
 
+    /**
+     * @param aHABITACIONSIMPLE the HABITACIONSIMPLE to set
+     */
+    public static void setHABITACIONSIMPLE(Integer aHABITACIONSIMPLE)
+    {
+        HABITACIONSIMPLE = aHABITACIONSIMPLE;
+    }
+
+    /**
+     * @param aHABITACIONDOBLE the HABITACIONDOBLE to set
+     */
+    public static void setHABITACIONDOBLE(Integer aHABITACIONDOBLE)
+    {
+        HABITACIONDOBLE = aHABITACIONDOBLE;
+    }
+
+    /**
+     * @param aHABITACIONSUITE the HABITACIONSUITE to set
+     */
+    public static void setHABITACIONSUITE(Integer aHABITACIONSUITE)
+    {
+        HABITACIONSUITE = aHABITACIONSUITE;
+    }
     /**
      * @param ocupado the ocupado to set
      */
@@ -92,7 +118,7 @@ public class Habitacion implements iHabitaciones
      /**
      * @param aHABITACIONES the HABITACIONES to set
      */
-    public static void setHABITACIONES(Integer aHABITACIONES)
+    public void setHABITACIONES(Integer aHABITACIONES)
     {
         HABITACIONES = aHABITACIONES;
     }
@@ -100,7 +126,7 @@ public class Habitacion implements iHabitaciones
     /**
      * @param aHABITACIONESOCUPADAS the HABITACIONESOCUPADAS to set
      */
-    public static void setHABITACIONESOCUPADAS(Integer aHABITACIONESOCUPADAS)
+    public void setHABITACIONESOCUPADAS(Integer aHABITACIONESOCUPADAS)
     {
         HABITACIONESOCUPADAS = aHABITACIONESOCUPADAS;
     }
@@ -108,6 +134,33 @@ public class Habitacion implements iHabitaciones
     
     
     //ZONA GETS
+    
+    
+    /**
+     * @return the HABITACIONSIMPLE
+     */
+    public Integer getHABITACIONSIMPLE()
+    {
+        return HABITACIONSIMPLE;
+    }
+
+    /**
+     * @return the HABITACIONDOBLE
+     */
+    public Integer getHABITACIONDOBLE()
+    {
+        return HABITACIONDOBLE;
+    }
+
+    /**
+     * @return the HABITACIONSUITE
+     */
+    public Integer getHABITACIONSUITE()
+    {
+        return HABITACIONSUITE;
+    }
+
+
 
     /**
      * @return the ocupado
@@ -175,8 +228,17 @@ public class Habitacion implements iHabitaciones
     
   
     //ZONA FUNCIONES
+    //establece le valor de HABITACIONES
+    private void establecerHabitacionesTotales()
+    {
+        this.setHABITACIONES(this.CalcularHabitaciones());
+    }
     
-    
+    //devuelve el número total de habitaciones
+    private Integer CalcularHabitaciones()
+    {
+        return (this.getHABITACIONSIMPLE()+this.getHABITACIONDOBLE()+this.getHABITACIONSUITE());
+    }
     
   /**
    * Método que devuelve el número de habitaciones que tiene el hotel
@@ -185,7 +247,7 @@ public class Habitacion implements iHabitaciones
    * @return número habitaciones
    */
     public Integer verNumeroHabitaciones()
-    {
+    {   this.establecerHabitacionesTotales();
         return (getHABITACIONES()-getHABITACIONESOCUPADAS());
     }
     
