@@ -1,8 +1,3 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 
 package proyectoclase;
 
@@ -12,7 +7,7 @@ import java.io.*;
  *
  * @author nelson
  */
-public class ProyectoClase
+public class ProyectoClase 
 {
 
     /**
@@ -23,6 +18,23 @@ public class ProyectoClase
         // TODO code application logic here
         File fichero1 = new File("DatosPersonas.dat");
         File fichero2 = new File("EntradaSalida.dat");
+        Habitacion hab = new Habitacion();
+        Cliente cli=new Cliente();
+      /*  
+        System.out.println(hab.verNumeroHabitaciones());
+        hab.habitacionesDespachadas(2, 'S');
+        System.out.println(hab.verNumeroHabitaciones());
+        System.out.println(hab.getMascotas());
+        hab.datosHabitacion();
+        System.out.println(hab.getMascotas());
+        System.out.println(hab.getTipoHabitacion());
+        System.out.println(hab.verNumeroHabitaciones());*/
+        
+        
+        System.out.println(cli.recogerFecha());
+        cli.tomaDatos();
+        
+
         Menu menu = new Menu();
         menu.menu();
     }
