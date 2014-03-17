@@ -19,7 +19,7 @@ public class Habitacion implements iHabitaciones
     private static Integer HABITACIONSUITE=2;
     
     private static Integer HABITACIONES;
-    private static Integer HABITACIONESOCUPADAS=5;//variable que se irá cambiando según clientes en el hotel
+    private static Integer HABITACIONESOCUPADAS=1;//variable que se irá cambiando según clientes en el hotel
 
     //DECLARACIÓN VARIABLES
     
@@ -273,14 +273,15 @@ public class Habitacion implements iHabitaciones
     {
         if(modo=='S')
         {
-            if(tipoHabitacion=="Simple")
+            if(tipoHabitacion=="simple")
             {
                 setHABITACIONSIMPLE(getHABITACIONSIMPLE()-1);
             }
-            if(tipoHabitacion=="Doble")
+            if(tipoHabitacion=="doble")
             {
                 setHABITACIONDOBLE(getHABITACIONDOBLE()-1);
-            }else
+            }
+            if(tipoHabitacion=="suite")
             {
                 setHABITACIONSUITE(getHABITACIONSUITE()-1);
             }
@@ -321,9 +322,9 @@ public class Habitacion implements iHabitaciones
         {
             case 0:this.setTipoHabitacion("simple");
                 break;
-            case 1: this.setTipoHabitacion("Doble");
+            case 1: this.setTipoHabitacion("doble");
                 break;
-            case 2: this.setTipoHabitacion("Suite");
+            case 2: this.setTipoHabitacion("suite");
                 break;
         }
         
