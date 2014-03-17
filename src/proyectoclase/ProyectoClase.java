@@ -30,9 +30,9 @@ public class ProyectoClase
         System.out.println(hab.getTipoHabitacion());
         System.out.println(hab.verNumeroHabitaciones());*/
         
-        
+        /*
         System.out.println(cli.recogerFecha());
-        cli.tomaDatos();
+        cli.tomaDatos();*/
         
 
         Menu menu = new Menu();
