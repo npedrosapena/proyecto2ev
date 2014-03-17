@@ -269,11 +269,21 @@ public class Habitacion implements iHabitaciones
      * @param numeroHabitacionesRestar número de habitaciones en las que alojamos los clientes
      * @param modo indica el modo sumar/restar
      */
-    public void habitacionesDespachadas(Integer numeroHabitacionesRestar, char modo)
+    public void habitacionesDespachadas(String tipoHabitacion,Integer numeroHabitacionesRestar, char modo)
     {
         if(modo=='S')
         {
-            setHABITACIONESOCUPADAS(getHABITACIONESOCUPADAS()+numeroHabitacionesRestar);
+            if(tipoHabitacion=="Simple")
+            {
+                setHABITACIONSIMPLE(getHABITACIONSIMPLE()-1);
+            }
+            if(tipoHabitacion=="Doble")
+            {
+                setHABITACIONDOBLE(getHABITACIONDOBLE()-1);
+            }else
+            {
+                setHABITACIONSUITE(getHABITACIONSUITE()-1);
+            }
         }else
         {
             setHABITACIONESOCUPADAS(getHABITACIONESOCUPADAS()-numeroHabitacionesRestar);
@@ -283,7 +293,7 @@ public class Habitacion implements iHabitaciones
     /**
      * Se introducen los datos de la habitación
      */
-    public void datosHabitacion()
+    public String datosHabitacion()
     {
         Integer opcion=0;
         
@@ -311,16 +321,17 @@ public class Habitacion implements iHabitaciones
         {
             case 0:this.setTipoHabitacion("simple");
                 break;
-            case 1: this.setTipoHabitacion("doble");
+            case 1: this.setTipoHabitacion("Doble");
                 break;
-            case 2: this.setTipoHabitacion("suit");
+            case 2: this.setTipoHabitacion("Suite");
                 break;
         }
         
         this.setPrecio(Float.parseFloat(JOptionPane.showInputDialog(null,"precio","Datos habitación",JOptionPane.INFORMATION_MESSAGE)));
         
         //sumamos una habitación ocupada
-        this.habitacionesDespachadas(1, 'S');
+        this.habitacionesDespachadas(this.getTipoHabitacion(),1, 'S');
+        return this.getTipoHabitacion();
     }
     
     @Override
