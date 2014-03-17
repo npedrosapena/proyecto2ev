@@ -27,15 +27,20 @@ public class Cliente
   //CONTRUCTORES
   
   public Cliente(){}
-  public Cliente(String nombre, String apellidos, String dni, String direccion, String codigoCliente, String fechaEntrada, String formaPago)
+  public Cliente(String nombre, String apellidos,String provincia,Integer telefono,String nacionalidad, String dni, String direccion, String fechaEntrada, String fechaSalida,String formaPago, Boolean mascota, char sexo,String codigoCliente)
   {
       this.nombre=nombre;
       this.apellidos=apellidos;
+      this.telefono=telefono;
+      this.nacionalidad=nacionalidad;
       this.dni=dni;
       this.direccion=direccion;
-      this.codigoCliente=codigoCliente;
       this.fechaEntrada=fechaEntrada;
+      this.fechaSalida=fechaSalida;
       this.formaPago=formaPago;
+      this.mascotas=mascota;
+      this.sexo=sexo;
+      this.codigoCliente=codigoCliente;
   }
   
   //ZONA SETS
@@ -328,6 +333,11 @@ public class Cliente
      */
     public String fechaSalida()
     {
+        /*
+        controlar el día porque no deja meter anteriores al dia de hoy 
+        y si el mes es el que viene queremos salir un dia antes al de hoy en este mes
+        no deja meterlo
+        */
         Calendar calendario=Calendar.getInstance();
         
         int valor=0;
@@ -369,13 +379,15 @@ public class Cliente
             }
         }
          
-         
-         
-        System.out.println(fechaCadena+valor);
         return fechaCadena+valor;
     }
     
-    public void tomaDatos()
+    /**
+     * Toma los datos de un cliente y devuelve un cliente
+     * 
+     * @return clienteHotel
+     */
+    public Cliente tomaDatos()
     {
 
         Object pago[] ={"Efectivo","Tarjeta"};
@@ -393,13 +405,13 @@ public class Cliente
         this.setDireccion(JOptionPane.showInputDialog(null, "Introduzca dirección", "Introducción datos cliente", JOptionPane.INFORMATION_MESSAGE));
         this.setFechaEntrada(this.recogerFecha());
         
-        this.setFechaSalida(fechaSalida);
+        this.setFechaSalida(this.fechaSalida());
         
         formaPago=JOptionPane.showOptionDialog(null, " Tipo de pago", "Datos habitación", JOptionPane.YES_NO_CANCEL_OPTION, JOptionPane.QUESTION_MESSAGE, null, pago,null);
         this.setFormaPago((String) pago[formaPago]);
         
         //aprobecho la variable formaPago
-        formaPago=JOptionPane.showOptionDialog(null, " Tipo de pago", "Datos habitación", JOptionPane.YES_NO_CANCEL_OPTION, JOptionPane.QUESTION_MESSAGE, null, mascotas,null);
+        formaPago=JOptionPane.showOptionDialog(null, " Incluye mascotas?", "Datos habitación", JOptionPane.YES_NO_CANCEL_OPTION, JOptionPane.QUESTION_MESSAGE, null, mascotas,null);
         
         if (formaPago>0)
         {
@@ -420,8 +432,9 @@ public class Cliente
         }
         
         this.setCodigoCliente(this.codificado(this.getDni()));
+        Cliente clienteHotel= new Cliente(this.getNombre(),this.getApellidos(),this.getProvincia(),this.getTelefono(),this.getNacionalidad(),this.getDni(),this.getDireccion(),this.getFechaEntrada(),this.getFechaSalida(),this.getFormaPago(),this.getMascotas(),this.getSexo(),this.getCodigoCliente());
         
-        
+        return clienteHotel;
     }
 
 }
