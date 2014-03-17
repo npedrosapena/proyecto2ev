@@ -6,6 +6,8 @@
 
 package proyectoclase;
 
+import java.io.*;
+
 /**
  *
  * @author nelson
@@ -19,6 +21,8 @@ public class ProyectoClase
     public static void main(String[] args)
     {
         // TODO code application logic here
+        File fichero1 = new File("DatosPersonas.dat");
+        File fichero2 = new File("EntradaSalida.dat");
         Menu menu = new Menu();
         menu.menu();
     }

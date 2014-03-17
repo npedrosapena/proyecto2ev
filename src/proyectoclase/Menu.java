@@ -100,17 +100,48 @@ public class Menu
         
         
     }
-    public void verSalidas()
+    public int verSalidas()
     {
+        int opcion = 0;
         
-    }
-    public void policia()
-    {
-        
+        Object seleccion = JOptionPane.showInputDialog(null,"Hotel NPCP","Elija una opción",JOptionPane.QUESTION_MESSAGE,null, (Object[]) new Object[]{"Salidas en el dia", "Todas las salidas"}, "Salir");
+        if (seleccion == "Salidas en el dia")
+        {
+            opcion = 1;
+        }
+        else if(seleccion == "Todas las salidas")
+        {
+            opcion = 0;
+        }
+        return opcion;
     }
     public void ofertas()
     {
+        Object seleccion = JOptionPane.showInputDialog(null,"Hotel NPCP","Elija una opción",JOptionPane.QUESTION_MESSAGE,null, (Object[]) new Object[]{"Ofertas del mes", "Ofertas fidelidad"}, "Salir");
+        if (seleccion == "Ofertas del mes")
+        {
+            
+        }
+        else if(seleccion == "Ofertas fidelidad")
+        {
+            
+        }
         
+    }
+    public int policia()
+    {
+        int opcion = 0;
+        Object seleccion = JOptionPane.showInputDialog(null,"Hotel NPCP","Elija una opción",JOptionPane.QUESTION_MESSAGE,null, (Object[]) new Object[]{"Enviar datos del clientes", "Datos de clientes sin enviar"}, "Salir");
+        if(seleccion == "Enviar datos del clientes")
+        {
+            opcion = 1;
+        }
+        else if(seleccion == "Datos de clientes sin enviar")
+        {
+            opcion = 2;
+            
+        }
+        return opcion;
     }
     public void conHabitaciones()
     {
