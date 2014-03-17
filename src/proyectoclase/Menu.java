@@ -95,7 +95,7 @@ public class Menu
         }
         else
         {
-            JOptionPane.showMessageDialog(null, "Tenemos disponibles en estos momentos: " + opcion);
+            JOptionPane.showMessageDialog(null, "Tenemos disponibles en estos momentos: " + opcion+"\n"+habitacion.getHABITACIONSIMPLE()+" Simple\n"+habitacion.getHABITACIONDOBLE()+" Doble\n"+habitacion.getHABITACIONSUITE()+" Suite");
         }
         
         
