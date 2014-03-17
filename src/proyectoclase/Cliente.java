@@ -21,7 +21,7 @@ public class Cliente
   private Integer telefono,contadorFidelidad;
   private Boolean mascotas;
   //nuevas variables de clase
-  private String nacionalidad,provincia,fechaSalida;
+  private String nacionalidad,provincia,fechaSalida;//tipoHabitacion;
   private String TEXTO="data.fbi";//nombre archivo donde guardamos datos
   
   //CONTRUCTORES
@@ -41,11 +41,18 @@ public class Cliente
       this.mascotas=mascota;
       this.sexo=sexo;
       this.codigoCliente=codigoCliente;
+      //this.tipoHabitacion=tipoHabitacion;
   }
   
   //ZONA SETS
 
-  
+   /**
+     * @param tipoHabitacion the tipoHabitacion to set
+     */
+   /* public void setTipoHabitacion(String tipoHabitacion)
+    {
+        this.tipoHabitacion = tipoHabitacion;
+    }*/
     /**
      * @return the nacionalidad
      */
@@ -160,6 +167,14 @@ public class Cliente
   
   
     //ZONA GETS
+    
+     /**
+     * @return the tipoHabitacion
+     */
+   /* public String getTipoHabitacion()
+    {
+        //return tipoHabitacion;
+    }*/
 
     /**
      * @return the sexo
@@ -389,7 +404,7 @@ public class Cliente
      */
     public Cliente tomaDatos()
     {
-
+        Habitacion habi= new Habitacion();
         Object pago[] ={"Efectivo","Tarjeta"};
         Object mascotas[]={"Sí","No"};
         Object sexo[]={'V','F'};
@@ -403,6 +418,7 @@ public class Cliente
         this.setNacionalidad(JOptionPane.showInputDialog(null, "Introduzca nacionalidad", "Introducción datos cliente", JOptionPane.INFORMATION_MESSAGE));
         this.setDni(JOptionPane.showInputDialog(null, "Introduzca dni", "Introducción datos cliente", JOptionPane.INFORMATION_MESSAGE));
         this.setDireccion(JOptionPane.showInputDialog(null, "Introduzca dirección", "Introducción datos cliente", JOptionPane.INFORMATION_MESSAGE));
+        habi.setTipoHabitacion(habi.datosHabitacion());
         this.setFechaEntrada(this.recogerFecha());
         
         this.setFechaSalida(this.fechaSalida());
