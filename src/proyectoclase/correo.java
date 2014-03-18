@@ -198,18 +198,6 @@ public class correo extends JFrame {
          
         message.setFrom(new InternetAddress( str_De ));
  
-    //Otra forma de especificar las direcciones de email
-    //a quienes se enviar el correo electronico
-    //Forma 1
-        //Address [] receptores = new Address []{
-    //      new InternetAddress ("fuerenio@gmail.com"),
-    //      new InternetAddress ("gonzasilve@gmail.com")
-    //  };
-    //Forma 2
-    //  Address [] receptores = new Address []{
-    //      new InternetAddress ( str_De )
-    // };
-    //Forma 3
         Address [] receptores = new Address [ destinos.length ];
         int j = 0;
     while(j<destinos.length){                   
