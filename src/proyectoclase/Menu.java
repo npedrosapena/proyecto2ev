@@ -15,6 +15,7 @@ import javax.swing.JOptionPane;
 public class Menu
 {
     Habitacion habitacion = new Habitacion();
+    Cliente cliente = new Cliente();
     
 
     public void menu()
@@ -95,7 +96,12 @@ public class Menu
         }
         else
         {
-            JOptionPane.showMessageDialog(null, "Tenemos disponibles en estos momentos: " + opcion+"\n"+habitacion.getHABITACIONSIMPLE()+" Simple\n"+habitacion.getHABITACIONDOBLE()+" Doble\n"+habitacion.getHABITACIONSUITE()+" Suite");
+            int seleccion = JOptionPane.showOptionDialog(null, "Tenemos disponibles en estos momentos: " + opcion+"\n"+habitacion.getHABITACIONSIMPLE()+" Simple\n"+habitacion.getHABITACIONDOBLE()+" Doble\n"+habitacion.getHABITACIONSUITE()+" Suite", "Nuevo cliente", JOptionPane.YES_NO_CANCEL_OPTION, JOptionPane.QUESTION_MESSAGE, null, new Object[] {"Si", "No","Cancelar"}, "Si");
+            
+            if (seleccion == 0)
+            {
+                cliente.tomaDatos();
+            }
         }
         
         
