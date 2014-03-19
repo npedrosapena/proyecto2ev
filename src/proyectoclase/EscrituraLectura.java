@@ -85,7 +85,7 @@ public class EscrituraLectura
             }
         }catch (Exception ex)
         {
-            System.out.println("Erro6 " + ex.getMessage());
+            System.out.println("Error de lectura " + ex.getMessage());
             
         }finally
         {

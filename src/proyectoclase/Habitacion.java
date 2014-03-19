@@ -20,7 +20,8 @@ public class Habitacion implements iHabitaciones
     
     private static Integer HABITACIONES;
 
-    private static Integer HABITACIONESOCUPADAS = 0;//variable que se irá cambiando según clientes en el hotel
+    private static Integer HABITACIONESOCUPADAS=0;//variable que se irá cambiando según clientes en el hotel
+
 
     //DECLARACIÓN VARIABLES
     
