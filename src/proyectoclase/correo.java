@@ -1,4 +1,4 @@
-/*
+
 package proyectoclase;
   
 import javax.swing.*;
@@ -234,4 +234,3 @@ public class correo extends JFrame {
     }
      
 }
-*/

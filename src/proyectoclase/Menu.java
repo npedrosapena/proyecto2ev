@@ -15,9 +15,9 @@ import javax.swing.JOptionPane;
  */
 public class Menu
 {
-    File fichero1 = new File("DatosPersonas.dat");
-    File fichero2 = new File("EntradaSalida.dat");
+    File fichero1 = new File("DatosPersonas.txt");
     Habitacion habitacion = new Habitacion();
+    correo correos = new correo("titulo",500,500);
     Cliente cliente = new Cliente();
     EscrituraLectura insertar = new EscrituraLectura();
     
@@ -112,8 +112,10 @@ public class Menu
         
         
     }
-    public int verSalidas()
+    public void verSalidas()
     {
+        insertar.leer(fichero1);
+        /*
         int opcion = 0;
         
         Object seleccion = JOptionPane.showInputDialog(null,"Hotel NPCP","Elija una opción",JOptionPane.QUESTION_MESSAGE,null, (Object[]) new Object[]{"Salidas en el dia", "Todas las salidas"}, "Salir");
@@ -127,9 +129,11 @@ public class Menu
             opcion = 0;
         }
         return opcion;
+        */
     }
     public void ofertas()
     {
+        /*
         Object seleccion = JOptionPane.showInputDialog(null,"Hotel NPCP","Elija una opción",JOptionPane.QUESTION_MESSAGE,null, (Object[]) new Object[]{"Ofertas del mes", "Ofertas fidelidad"}, "Salir");
         if (seleccion == "Ofertas del mes")
         {
@@ -139,14 +143,18 @@ public class Menu
         {
             
         }
+        */
         
     }
-    public int policia()
+    public void policia()
     {
+        correos.mostrar();
+        /*
         int opcion = 0;
         Object seleccion = JOptionPane.showInputDialog(null,"Hotel NPCP","Elija una opción",JOptionPane.QUESTION_MESSAGE,null, (Object[]) new Object[]{"Enviar datos del clientes", "Datos de clientes sin enviar"}, "Salir");
         if(seleccion == "Enviar datos del clientes")
         {
+            correos.mostrar();
             opcion = 1;
         }
         else if(seleccion == "Datos de clientes sin enviar")
@@ -154,7 +162,7 @@ public class Menu
             opcion = 2;
             
         }
-        return opcion;
+        return opcion;*/
     }
     public void conHabitaciones()
     {

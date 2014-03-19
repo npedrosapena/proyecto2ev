@@ -4,6 +4,7 @@ Clase Cliente
 
 package proyectoclase;
 
+import java.io.Serializable;
 import java.util.Calendar;
 import java.util.Locale;
 import javax.swing.JOptionPane;
@@ -13,10 +14,10 @@ import javax.swing.JOptionPane;
  * @author nelson & Carlos
  */
 
-public class Cliente
+public class Cliente implements Serializable
 {
     // DECLARACIÓN DE VARIABLES
-  private char sexo;
+  private String sexo;
   private String nombre,apellidos,dni,direccion,codigoCliente,fechaEntrada,formaPago;
   private Integer telefono,contadorFidelidad;
   private Boolean mascotas;
@@ -27,7 +28,7 @@ public class Cliente
   //CONTRUCTORES
   
   public Cliente(){}
-  public Cliente(String nombre, String apellidos,String provincia,Integer telefono,String nacionalidad, String dni, String direccion, String fechaEntrada, String fechaSalida,String formaPago, Boolean mascota, char sexo,String codigoCliente)
+  public Cliente(String nombre, String apellidos,String provincia,Integer telefono,String nacionalidad, String dni, String direccion, String fechaEntrada, String fechaSalida,String formaPago, Boolean mascota, String sexo,String codigoCliente)
   {
       this.nombre=nombre;
       this.apellidos=apellidos;
@@ -80,7 +81,7 @@ public class Cliente
     /**
      * @param sexo the sexo to set
      */
-    public void setSexo(char sexo)
+    public void setSexo(String sexo)
     {
         this.sexo = sexo;
     }
@@ -179,7 +180,7 @@ public class Cliente
     /**
      * @return the sexo
      */
-    public char getSexo()
+    public String getSexo()
     {
         return sexo;
     }
@@ -297,9 +298,7 @@ public class Cliente
   @Override
     public String toString()
     {
-        return (this.getNombre()+","
-                +this.getApellidos()
-                +","+this.getDni()
+        return (this.getNombre()+","+this.getApellidos()+","+this.getDni()
                 +","+this.getDireccion()
                 +","+this.getCodigoCliente()
                 +","+this.getFechaEntrada()
@@ -372,7 +371,7 @@ public class Cliente
          
          while(valor<=0)
         {
-            valor=Integer.parseInt(JOptionPane.showInputDialog(null, "Introduzca año (YYYY)", "Introducción datos cliente", JOptionPane.INFORMATION_MESSAGE));
+            valor=Integer.parseInt(JOptionPane.showInputDialog(null, "Introduzca año de salida (YYYY)", "Introducción datos cliente", JOptionPane.INFORMATION_MESSAGE));
             if (valor<calendario.get(Calendar.YEAR))
             {
                 JOptionPane.showMessageDialog(null, "El valor introducido no es correcto", "Introducción datos cliente", JOptionPane.ERROR_MESSAGE);
@@ -427,10 +426,10 @@ public class Cliente
         
         if (formaPago>0)
         {
-            this.setSexo('V');
+            this.setSexo("V");
         }else
         {
-             this.setSexo('F');
+             this.setSexo("F");
         }
         
         this.setCodigoCliente(this.codificado(this.getDni()));

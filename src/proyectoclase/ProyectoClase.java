@@ -15,27 +15,6 @@ public class ProyectoClase
      */
     public static void main(String[] args)
     {
-        // TODO code application logic here
-       
-        Habitacion hab = new Habitacion();
-        Cliente cli=new Cliente();
-        //correo correo = new correo("mensaje",500,500);
-        //correo.mostrar();
-       /*
-        //System.out.println(hab.verNumeroHabitaciones());
-        //hab.habitacionesDespachadas(2, 'S');
-        System.out.println(hab.verNumeroHabitaciones());
-        System.out.println(hab.getMascotas());
-        hab.datosHabitacion();
-        System.out.println(hab.getMascotas());
-        System.out.println(hab.getTipoHabitacion());
-        System.out.println(hab.verNumeroHabitaciones());
-        
-        
-        System.out.println(cli.recogerFecha());
-        cli.tomaDatos();
-        */
-
         Menu menu = new Menu();
         menu.menu();
     }

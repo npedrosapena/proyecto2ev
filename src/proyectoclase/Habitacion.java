@@ -19,6 +19,7 @@ public class Habitacion implements iHabitaciones
     private static Integer HABITACIONSUITE=2;
     
     private static Integer HABITACIONES;
+
     private static Integer HABITACIONESOCUPADAS = 0;//variable que se irá cambiando según clientes en el hotel
 
     //DECLARACIÓN VARIABLES
@@ -328,8 +329,8 @@ public class Habitacion implements iHabitaciones
                 break;
         }
         
-        this.setPrecio(Float.parseFloat(JOptionPane.showInputDialog(null,"precio","Datos habitación",JOptionPane.INFORMATION_MESSAGE)));
-        
+        //this.setPrecio(Float.parseFloat(JOptionPane.showInputDialog(null,"precio","Datos habitación",JOptionPane.INFORMATION_MESSAGE)));
+        this.setPrecio(this.calcularPrecio());
         //sumamos una habitación ocupada
         this.habitacionesDespachadas(this.getTipoHabitacion(),1, 'S');
         return this.getTipoHabitacion();
