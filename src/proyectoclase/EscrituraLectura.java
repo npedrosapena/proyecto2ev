@@ -15,20 +15,21 @@ import java.util.*;
  */
 public class EscrituraLectura
 {
-    public void escribir(File ficheiro, ArrayList datosCliente)
+    public void escribir(File fichero1, Cliente cliente)
     {
         ObjectOutputStream fich = null;
+        
+        
         try
         {
             
-            fich = new ObjectOutputStream(new FileOutputStream(ficheiro));
-            for(int i = 0; i < datosCliente.size(); i++)
-            {
-                fich.writeObject(datosCliente.get(i));
-            }
+            fich = new ObjectOutputStream(new FileOutputStream(fichero1));
+           
+            fich.writeObject(cliente.getNombre() + cliente.getApellidos() + cliente.getProvincia() + cliente.getTelefono() + cliente.getNacionalidad() + cliente.getDni() +cliente.getDireccion() + cliente.getFechaEntrada() + cliente.getFechaSalida() + cliente.getFormaPago() + cliente.getMascotas() + cliente.getSexo() + cliente.getCodigoCliente());
+
         }catch(IOException ex)
         {
-            System.out.println("Erro escritura" + ex.getMessage());
+            System.out.println("Error de escritura " + ex.getMessage());
         }finally
         {
             if(fich != null)
@@ -38,19 +39,19 @@ public class EscrituraLectura
                     fich.close();                    
                 }catch(IOException ex)
                 {
-                    System.out.println("Erro o pechar o ficheiro" + ex.getMessage());
+                    System.out.println("Error al cerrar el fichero" + ex.getMessage());
                 }
 
             }
         }
         
     }
-    public static void leer(File ficheiro)
+    public void leer(File fichero1)
     {
         ObjectInputStream fich = null;
         try
         {
-            fich = new ObjectInputStream (new FileInputStream (ficheiro));
+            fich = new ObjectInputStream (new FileInputStream (fichero1));
             Cliente datos = (Cliente)fich.readObject();
             while(datos != null)
             {
