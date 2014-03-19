@@ -360,7 +360,7 @@ public class Cliente
         
         while(valor<=0)
         {
-            valor=Integer.parseInt(JOptionPane.showInputDialog(null, "Introduzca día", "Introducción datos cliente", JOptionPane.INFORMATION_MESSAGE));
+            valor=Integer.parseInt(JOptionPane.showInputDialog(null, "Introduzca día de salida", "Introducción datos cliente", JOptionPane.INFORMATION_MESSAGE));
             if ((valor<1 || valor>31)|| (valor<=calendario.get(Calendar.DAY_OF_MONTH)))
             {
                 JOptionPane.showMessageDialog(null, "El valor introducido no es correcto", "Introducción datos cliente", JOptionPane.ERROR_MESSAGE);
@@ -373,7 +373,7 @@ public class Cliente
         
         while(valor<=0)
         {
-            valor=Integer.parseInt(JOptionPane.showInputDialog(null, "Introduzca mes", "Introducción datos cliente", JOptionPane.INFORMATION_MESSAGE));
+            valor=Integer.parseInt(JOptionPane.showInputDialog(null, "Introduzca mes de salida", "Introducción datos cliente", JOptionPane.INFORMATION_MESSAGE));
             if ((valor<1 || valor>12) || (valor<=calendario.get(Calendar.MONTH)))
             {
                 JOptionPane.showMessageDialog(null, "El valor introducido no es correcto", "Introducción datos cliente", JOptionPane.ERROR_MESSAGE);
@@ -386,7 +386,7 @@ public class Cliente
          
          while(valor<=0)
         {
-            valor=Integer.parseInt(JOptionPane.showInputDialog(null, "Introduzca año (YYYY)", "Introducción datos cliente", JOptionPane.INFORMATION_MESSAGE));
+            valor=Integer.parseInt(JOptionPane.showInputDialog(null, "Introduzca año de salida (YYYY)", "Introducción datos cliente", JOptionPane.INFORMATION_MESSAGE));
             if (valor<calendario.get(Calendar.YEAR))
             {
                 JOptionPane.showMessageDialog(null, "El valor introducido no es correcto", "Introducción datos cliente", JOptionPane.ERROR_MESSAGE);
