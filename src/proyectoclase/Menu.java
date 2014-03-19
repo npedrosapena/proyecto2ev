@@ -6,16 +6,20 @@
 
 package proyectoclase;
 
+import java.io.*;
 import javax.swing.JOptionPane;
 
 /**
  *
- * @author findag
+ * @author Nelson & Carlos
  */
 public class Menu
 {
+    File fichero1 = new File("DatosPersonas.dat");
+    File fichero2 = new File("EntradaSalida.dat");
     Habitacion habitacion = new Habitacion();
     Cliente cliente = new Cliente();
+    EscrituraLectura insertar = new EscrituraLectura();
     
 
     public void menu()
@@ -96,11 +100,13 @@ public class Menu
         }
         else
         {
-            int seleccion = JOptionPane.showOptionDialog(null, "Tenemos disponibles en estos momentos: " + opcion+"\n"+habitacion.getHABITACIONSIMPLE()+" Simple\n"+habitacion.getHABITACIONDOBLE()+" Doble\n"+habitacion.getHABITACIONSUITE()+" Suite", "Nuevo cliente", JOptionPane.YES_NO_CANCEL_OPTION, JOptionPane.QUESTION_MESSAGE, null, new Object[] {"Si", "No","Cancelar"}, "Si");
+            int seleccion = JOptionPane.showOptionDialog(null, "Tenemos disponibles en estos momentos: " + opcion+"\n"+habitacion.getHABITACIONSIMPLE()+" Simple\n"+habitacion.getHABITACIONDOBLE()+" Doble\n"+habitacion.getHABITACIONSUITE()+" Suite", "Nuevo cliente", JOptionPane.YES_NO_CANCEL_OPTION, JOptionPane.QUESTION_MESSAGE, null, new Object[] {"Continuar", "Regresar","Cancelar"}, "Continuar");
             
             if (seleccion == 0)
             {
-                cliente.tomaDatos();
+
+                cliente = cliente.tomaDatos();
+                insertar.escribir(fichero1, cliente);
             }
         }
         
@@ -117,6 +123,7 @@ public class Menu
         }
         else if(seleccion == "Todas las salidas")
         {
+            insertar.leer(fichero1);
             opcion = 0;
         }
         return opcion;

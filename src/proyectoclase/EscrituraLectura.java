@@ -11,7 +11,7 @@ import java.util.*;
 
 /**
  *
- * @author findag
+ * @author Nelson & Carlos
  */
 public class EscrituraLectura
 {
@@ -60,7 +60,7 @@ public class EscrituraLectura
             }
         }catch(Exception e)
         {
-            System.out.println("erro lectura" + e.getMessage());
+            System.out.println("error de  lectura " + e.getMessage());
             
         }
         

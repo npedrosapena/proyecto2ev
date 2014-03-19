@@ -8,7 +8,7 @@ import javax.swing.JOptionPane;
 
 /**
  *
- * @author nelson
+ * @author Nelson & Carlos
  */
 
 public class Habitacion implements iHabitaciones
@@ -19,7 +19,7 @@ public class Habitacion implements iHabitaciones
     private static Integer HABITACIONSUITE=2;
     
     private static Integer HABITACIONES;
-    private static Integer HABITACIONESOCUPADAS=1;//variable que se irá cambiando según clientes en el hotel
+    private static Integer HABITACIONESOCUPADAS = 0;//variable que se irá cambiando según clientes en el hotel
 
     //DECLARACIÓN VARIABLES
     
