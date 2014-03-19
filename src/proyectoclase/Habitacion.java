@@ -328,8 +328,8 @@ public class Habitacion implements iHabitaciones
                 break;
         }
         
-        this.setPrecio(Float.parseFloat(JOptionPane.showInputDialog(null,"precio","Datos habitación",JOptionPane.INFORMATION_MESSAGE)));
-        
+        //this.setPrecio(Float.parseFloat(JOptionPane.showInputDialog(null,"precio","Datos habitación",JOptionPane.INFORMATION_MESSAGE)));
+        this.setPrecio(this.calcularPrecio());
         //sumamos una habitación ocupada
         this.habitacionesDespachadas(this.getTipoHabitacion(),1, 'S');
         return this.getTipoHabitacion();
