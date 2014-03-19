@@ -20,8 +20,8 @@ public class ProyectoClase
         File fichero2 = new File("EntradaSalida.dat");
         Habitacion hab = new Habitacion();
         Cliente cli=new Cliente();*/
-        correo correo = new correo("mensaje",500,500);
-        correo.mostrar();
+       /* correo correo = new correo("mensaje",500,500);
+        correo.mostrar();*/
       /*  
         System.out.println(hab.verNumeroHabitaciones());
         hab.habitacionesDespachadas(2, 'S');
@@ -36,9 +36,9 @@ public class ProyectoClase
         System.out.println(cli.recogerFecha());
         cli.tomaDatos();*/
         
-/*
+
         Menu menu = new Menu();
-        menu.menu();*/
+        menu.menu();
     }
     
 }
