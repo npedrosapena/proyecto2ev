@@ -6,16 +6,20 @@
 
 package proyectoclase;
 
+import java.io.*;
 import javax.swing.JOptionPane;
 
 /**
  *
- * @author findag
+ * @author Nelson & Carlos
  */
 public class Menu
 {
+    File fichero1 = new File("DatosPersonas.txt");
     Habitacion habitacion = new Habitacion();
+    correo correos = new correo("titulo",500,500);
     Cliente cliente = new Cliente();
+    EscrituraLectura insertar = new EscrituraLectura();
     
 
     public void menu()
@@ -96,18 +100,22 @@ public class Menu
         }
         else
         {
-            int seleccion = JOptionPane.showOptionDialog(null, "Tenemos disponibles en estos momentos: " + opcion+"\n"+habitacion.getHABITACIONSIMPLE()+" Simple\n"+habitacion.getHABITACIONDOBLE()+" Doble\n"+habitacion.getHABITACIONSUITE()+" Suite", "Nuevo cliente", JOptionPane.YES_NO_CANCEL_OPTION, JOptionPane.QUESTION_MESSAGE, null, new Object[] {"Si", "No","Cancelar"}, "Si");
+            int seleccion = JOptionPane.showOptionDialog(null, "Tenemos disponibles en estos momentos: " + opcion+"\n"+habitacion.getHABITACIONSIMPLE()+" Simple\n"+habitacion.getHABITACIONDOBLE()+" Doble\n"+habitacion.getHABITACIONSUITE()+" Suite", "Nuevo cliente", JOptionPane.YES_NO_CANCEL_OPTION, JOptionPane.QUESTION_MESSAGE, null, new Object[] {"Continuar", "Regresar","Cancelar"}, "Continuar");
             
             if (seleccion == 0)
             {
-                cliente.tomaDatos();
+
+                cliente = cliente.tomaDatos();
+                insertar.escribir(fichero1, cliente);
             }
         }
         
         
     }
-    public int verSalidas()
+    public void verSalidas()
     {
+        insertar.leer(fichero1);
+        /*
         int opcion = 0;
         
         Object seleccion = JOptionPane.showInputDialog(null,"Hotel NPCP","Elija una opción",JOptionPane.QUESTION_MESSAGE,null, (Object[]) new Object[]{"Salidas en el dia", "Todas las salidas"}, "Salir");
@@ -117,12 +125,15 @@ public class Menu
         }
         else if(seleccion == "Todas las salidas")
         {
+            insertar.leer(fichero1);
             opcion = 0;
         }
         return opcion;
+        */
     }
     public void ofertas()
     {
+        /*
         Object seleccion = JOptionPane.showInputDialog(null,"Hotel NPCP","Elija una opción",JOptionPane.QUESTION_MESSAGE,null, (Object[]) new Object[]{"Ofertas del mes", "Ofertas fidelidad"}, "Salir");
         if (seleccion == "Ofertas del mes")
         {
@@ -132,14 +143,22 @@ public class Menu
         {
             
         }
+        */
         
     }
     public void policia()
     {
+
         /*int opcion = 0;
+=======
+        correos.mostrar();
+        /*
+        int opcion = 0;
+>>>>>>> origin/master
         Object seleccion = JOptionPane.showInputDialog(null,"Hotel NPCP","Elija una opción",JOptionPane.QUESTION_MESSAGE,null, (Object[]) new Object[]{"Enviar datos del clientes", "Datos de clientes sin enviar"}, "Salir");
         if(seleccion == "Enviar datos del clientes")
         {
+            correos.mostrar();
             opcion = 1;
         }
         else if(seleccion == "Datos de clientes sin enviar")
@@ -150,6 +169,7 @@ public class Menu
         return opcion;*/
             correo correo = new correo("mensaje",500,500);
             correo.mostrar();
+
     }
     public void conHabitaciones()
     {

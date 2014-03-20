@@ -18,6 +18,12 @@ import javax.mail.internet.InternetAddress;
 import javax.mail.internet.MimeMessage;
  
 public class correo extends JFrame {
+    //Constructor
+    public correo()
+    {
+        
+    }
+
  
     //Para el cuadro de dialogo de Opciones
     JPanel pnlServidor;
