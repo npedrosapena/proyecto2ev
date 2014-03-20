@@ -408,7 +408,7 @@ public class Cliente implements Serializable
         this.setNacionalidad(JOptionPane.showInputDialog(null, "Introduzca nacionalidad", "Introducción datos cliente", JOptionPane.INFORMATION_MESSAGE));
         this.setDni(JOptionPane.showInputDialog(null, "Introduzca dni", "Introducción datos cliente", JOptionPane.INFORMATION_MESSAGE));
         this.setDireccion(JOptionPane.showInputDialog(null, "Introduzca dirección", "Introducción datos cliente", JOptionPane.INFORMATION_MESSAGE));
-        //habi.setTipoHabitacion(habi.datosHabitacion());
+        habi.setTipoHabitacion(habi.datosHabitacion());
         this.setFechaEntrada(this.recogerFecha());
         
         this.setFechaSalida(this.fechaSalida());
