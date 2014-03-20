@@ -116,7 +116,7 @@ public class correo extends JFrame {
         //Destino
         Box boxDestino =  Box.createHorizontalBox();
         lblDestino = new JLabel("<html><font color='#0000FF'>Destino</font></html>");
-        jtfDestino = new JTextField("xeobass@hotmail.com",15);
+        jtfDestino = new JTextField("xeobass@gmail.com",15);
         jtfDestino.setToolTipText("Puede escribir varios destinatarios separados con coma");
         boxDestino.add(Box.createHorizontalStrut(15));
         boxDestino.add(lblDestino);
@@ -167,6 +167,7 @@ public class correo extends JFrame {
      
     public void mostrar() {
         setVisible(true);
+       
     }
      
     //Devuelve true en caso de que se envie el email de manera correcta, o

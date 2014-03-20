@@ -134,9 +134,9 @@ public class Menu
         }
         
     }
-    public int policia()
+    public void policia()
     {
-        int opcion = 0;
+        /*int opcion = 0;
         Object seleccion = JOptionPane.showInputDialog(null,"Hotel NPCP","Elija una opción",JOptionPane.QUESTION_MESSAGE,null, (Object[]) new Object[]{"Enviar datos del clientes", "Datos de clientes sin enviar"}, "Salir");
         if(seleccion == "Enviar datos del clientes")
         {
@@ -147,7 +147,9 @@ public class Menu
             opcion = 2;
             
         }
-        return opcion;
+        return opcion;*/
+            correo correo = new correo("mensaje",500,500);
+            correo.mostrar();
     }
     public void conHabitaciones()
     {
